@@ -1,0 +1,87 @@
+/* Fondo naranja general */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e66920; /* Naranja */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Contenedor del login */
+  .login-container {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  
+  /* Título */
+  .login-container h2 {
+    margin-bottom: 25px;
+    color: black;
+    font-size: 28px;
+  }
+  
+  /* Inputs */
+  .login-container input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  /* Botón */
+  .login-container button {
+    background-color: #004f77; /* Azul oscuro */
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-container button:hover {
+    background-color: #006ea1;
+  }
+  
+  /* Mensaje de error */
+  .error {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .btn-cerrar-sesion {
+    background-color: #FF5733; /* Fondo de color naranja */
+    color: white; /* Texto blanco */
+    border: none; /* Sin bordes */
+    padding: 10px 20px; /* Relleno interno */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor a mano cuando pasa sobre el botón */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+    
+    position: absolute; /* Posiciona el botón de manera absoluta */
+    top: 20px; /* Espacio desde la parte superior de la pantalla */
+    right: 20px; /* Espacio desde la parte derecha de la pantalla */
+  }
+
+  .btn-cerrar-sesion:hover {
+    background-color: #C84329; /* Fondo más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de ampliación al pasar el mouse */
+  }
+
+  .btn-cerrar-sesion:active {
+    background-color: #9C3827; /* Fondo aún más oscuro al hacer clic */
+    transform: scale(1); /* Volver al tamaño normal al hacer clic */
+  }
+  

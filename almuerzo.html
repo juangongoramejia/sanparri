@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Almuerzo del Día</title>
+  <link rel="stylesheet" href="css/restaurante.css">
+</head>
+<body class="fondo-naranja" onload="alert('Bienvenido a la sección de almuerzo del día. Por favor seleccione su opción y confirme su orden.')">
+  <header class="encabezado">
+    <img src="img/san_parri1.png" alt="San Parrillón" class="banner">
+  </header>
+
+  <main class="contenido-panaderia">
+    <section class="perfil">
+      <h2>Almuerzo del Día: seleccione su orden</h2>
+      <button onclick="cerrarSesion()" class="btn-cerrar-sesion">Cerrar Sesión</button>
+    </section>
+
+    <form id="formAlmuerzo">
+      <section class="tablas-productos">
+        <div class="tabla">
+          <h3>Plato principal</h3>
+          <label><input type="radio" name="plato" value="Carne Asada"> Carne Asada</label><br>
+          <label><input type="radio" name="plato" value="Pollo Apanado"> Pollo Apanado</label><br>
+          <label><input type="radio" name="plato" value="Chuleta de Cerdo"> Chuleta de Cerdo</label><br>
+          <label><input type="radio" name="plato" value="Pescado Frito"> Pescado Frito</label>
+        </div>
+
+        <div class="tabla">
+          <h3>Bebida</h3>
+          <label><input type="radio" name="bebida" value="Jugo de Mango"> Jugo de Mango</label><br>
+          <label><input type="radio" name="bebida" value="Jugo de Lulo"> Jugo de Lulo</label><br>
+          <label><input type="radio" name="bebida" value="Gaseosa"> Gaseosa</label><br>
+          <label><input type="radio" name="bebida" value="Agua"> Agua</label>
+        </div>
+
+        <div class="tabla">
+          <h3>Postre</h3>
+          <label><input type="radio" name="postre" value="Flan"> Flan</label><br>
+          <label><input type="radio" name="postre" value="Gelatina"> Gelatina</label><br>
+          <label><input type="radio" name="postre" value="Fruta"> Fruta</label><br>
+          <label><input type="radio" name="postre" value="Ninguno"> Ninguno</label>
+        </div>
+      </section>
+
+      <div class="acciones">
+        <button class="btn-verde" type="button" onclick="mostrarSeleccion()">Agregar a la orden</button>
+      </div>
+    </form>
+
+    <div class="acciones">
+      <button class="btn-verde" onclick="location.href='restaurante.html'">← Regresar</button>
+      <button class="btn-azul-claro" onclick="location.href='Login.html'">Inicio</button>
+    </div>
+  </main>
+
+  <script>
+    if (sessionStorage.getItem("sesionIniciada") !== "true") {
+        alert('Por favor Iniciar Sesión con el siguiente usuario para iniciar la aplicación: administrador, clave: 1234'); 
+      window.location.href = "login.html";
+    }
+
+    function mostrarSeleccion() {
+      const plato = document.querySelector('input[name="plato"]:checked');
+      const bebida = document.querySelector('input[name="bebida"]:checked');
+      const postre = document.querySelector('input[name="postre"]:checked');
+
+      if (plato && bebida && postre) {
+        alert(
+          `SE AGREGO LA SIGUIENTE ORDEN:\n` +
+          `Plato: ${plato.value}\n` +
+          `Bebida: ${bebida.value}\n` +
+          `Postre: ${postre.value}`
+        );
+        history.back();
+      } else {
+        alert("Por favor selecciona una opción de cada categoría.");
+      }
+    }
+
+    function cerrarSesion() {
+    sessionStorage.removeItem("sesionIniciada");
+    window.location.href = "login.html";
+  }
+  </script>
+</body>
+</html>

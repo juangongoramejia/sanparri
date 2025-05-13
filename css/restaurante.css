@@ -1,0 +1,233 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e66920;
+    color: white;
+    text-align: center;
+  }
+  
+  .header img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .perfil {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 4px solid #f1e4c3;
+    display: inline-block;
+    padding: 10px 30px;
+  }
+  
+  .botones-principales {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+  }
+  
+  .botones-principales button {
+    background-color: #004f77;
+    border: none;
+    color: white;
+    padding: 20px 40px;
+    font-size: 22px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .botones-principales button:hover {
+    background-color: #006ea1;
+  }
+  
+  .boton-regresar {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+  }
+  
+  .boton-regresar button {
+    background-color: #004f77;
+    color: white;
+    font-size: 20px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .boton-regresar button:hover {
+    background-color: #006ea1;
+  }
+
+  .fondo-naranja {
+    background-color: #e26d2f;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .encabezado .banner {
+    width: 100%;
+    height: auto;
+  }
+  
+  .perfil {
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .texto-notificacion {
+    font-size: 1.2em;
+    background-color: #eee;
+    color: #000;
+    padding: 4px 8px;
+    border-radius: 5px;
+  }
+  
+  .tablas-productos {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    gap: 20px;
+    text-align: left;
+  }
+  
+  .tabla {
+    background-color: #e7ddc1;
+    padding: 10px;
+    border-radius: 8px;
+    width: 30%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  }
+  
+  .tabla h3 {
+    background-color: #6489f6;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+  }
+  
+  .tabla label {
+    display: block;
+    margin: 6px 0;
+    color: #000;
+  }
+  
+  .acciones {
+    text-align: center;
+    margin: 30px 0;
+  }
+  
+  .acciones button {
+    background-color: #3fffd6;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .fondo-naranja {
+    background-color: #f17528;
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  .encabezado .banner {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+  }
+  
+  .perfil {
+    font-size: 24px;
+    color: white;
+    margin: 10px 0;
+  }
+  
+  .contenido {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .seccion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .icono {
+    width: 340px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .icono:hover {
+    transform: scale(1.05);
+  }
+  
+  .btn-verde,
+  .btn-azul-claro {
+    margin-top: 10px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .btn-verde {
+    background-color: #2dfec3;
+  }
+  
+  .btn-azul-claro {
+    background-color: #4aafec;
+  }
+  
+  .acciones {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .btn-cerrar-sesion {
+    background-color: #FF5733; /* Fondo de color naranja */
+    color: white; /* Texto blanco */
+    border: none; /* Sin bordes */
+    padding: 10px 20px; /* Relleno interno */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor a mano cuando pasa sobre el botón */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+    
+    position: absolute; /* Posiciona el botón de manera absoluta */
+    top: 20px; /* Espacio desde la parte superior de la pantalla */
+    right: 20px; /* Espacio desde la parte derecha de la pantalla */
+  }
+
+  .btn-cerrar-sesion:hover {
+    background-color: #C84329; /* Fondo más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de ampliación al pasar el mouse */
+  }
+
+  .btn-cerrar-sesion:active {
+    background-color: #9C3827; /* Fondo aún más oscuro al hacer clic */
+    transform: scale(1); /* Volver al tamaño normal al hacer clic */
+  }
+  

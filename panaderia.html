@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panadería - San Parrillón</title>
+  <link rel="stylesheet" href="css/restaurante.css">
+</head>
+<body class="fondo-naranja">
+  <header class="encabezado">
+    <img src="img/san_parri1.png" alt="San Parrillón" class="banner">
+  </header>
+
+  <main class="contenido-panaderia">
+    <section class="perfil">
+      <h2>Panaderia: seleccione su orden</h2>
+      <button onclick="cerrarSesion()" class="btn-cerrar-sesion">Cerrar Sesión</button>
+    </section>
+
+    <section class="tablas-productos">
+      <div class="tabla">
+        <h3>Panes</h3>
+        <label><input type="checkbox" value="Pan Francés"> Pan Francés</label><br>
+        <label><input type="checkbox" value="Pan de Queso"> Pan de Queso</label><br>
+        <label><input type="checkbox" value="Croissant"> Croissant</label><br>
+        <label><input type="checkbox" value="Pan Integral"> Pan Integral</label>
+      </div>
+      <div class="tabla">
+        <h3>Especiales</h3>
+        <label><input type="checkbox" value="Pan de Ajo"> Pan de Ajo</label><br>
+        <label><input type="checkbox" value="Pan Pizza"> Pan Pizza</label><br>
+        <label><input type="checkbox" value="Pan Jamón y Queso"> Pan Jamón y Queso</label><br>
+        <label><input type="checkbox" value="Pan de Chocolate"> Pan de Chocolate</label>
+      </div>
+      <div class="tabla">
+        <h3>Amasijos</h3>
+        <label><input type="checkbox" value="Almojábana"> Almojábana</label><br>
+        <label><input type="checkbox" value="Buñuelo"> Buñuelo</label><br>
+        <label><input type="checkbox" value="Pandebono"> Pandebono</label><br>
+        <label><input type="checkbox" value="Rosquilla"> Rosquilla</label>
+      </div>
+    </section>
+
+    <section class="acciones">
+      <button onclick="agregarOrden()">Agregar a la orden</button>
+      <button onclick="history.back()">Regresar</button>
+    </section>
+  </main>
+
+  <script>
+    if (sessionStorage.getItem("sesionIniciada") !== "true") {
+        alert('Por favor Iniciar Sesión con el siguiente usuario para iniciar la aplicación: administrador, clave: 1234'); 
+      window.location.href = "login.html";
+    }
+    window.onload = function() {
+    alert("Bienvenido a la sección de panadería. Por favor seleccione y confirme su orden.");
+  };
+    function agregarOrden() {
+      const seleccionados = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+        .map(el => el.value);
+
+      if (seleccionados.length > 0) {
+        alert("Se añadio lo siguiente a la orden:\n- " + seleccionados.join("\n- "));
+        history.back();
+      } else {
+        alert("No has seleccionado ningún producto.");
+      }
+    }
+
+    function cerrarSesion() {
+    sessionStorage.removeItem("sesionIniciada");
+    window.location.href = "login.html";
+  }
+  </script>
+</body>
+</html>

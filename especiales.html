@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Especiales del Día</title>
+  <link rel="stylesheet" href="css/restaurante.css">
+</head>
+<body class="fondo-naranja" onload="alert('Bienvenido a la sección de especiales. Por favor seleccione su orden y confirme.')">
+  <header class="encabezado">
+    <img src="img/san_parri1.png" alt="San Parrillón" class="banner">
+  </header>
+
+  <main class="contenido-panaderia">
+    <section class="perfil">
+      <h2>Especiales: seleccione su orden</h2>
+      <button onclick="cerrarSesion()" class="btn-cerrar-sesion">Cerrar Sesión</button>
+    </section>
+
+    <form id="formEspeciales">
+      <section class="tablas-productos">
+        <div class="tabla">
+          <h3>Plato Fuerte</h3>
+          <label><input type="radio" name="especial" value="Parrillada Mixta"> Parrillada Mixta</label><br>
+          <label><input type="radio" name="especial" value="Costillas BBQ"> Costillas BBQ</label><br>
+          <label><input type="radio" name="especial" value="Cazuela de Mariscos"> Cazuela de Mariscos</label><br>
+          <label><input type="radio" name="especial" value="Sancocho"> Sancocho</label>
+        </div>
+
+        <div class="tabla">
+          <h3>Acompañamiento</h3>
+          <label><input type="radio" name="acompanamiento" value="Yuca Frita"> Yuca Frita</label><br>
+          <label><input type="radio" name="acompanamiento" value="Papas a la francesa"> Papas a la francesa</label><br>
+          <label><input type="radio" name="acompanamiento" value="Ensalada fresca"> Ensalada fresca</label><br>
+          <label><input type="radio" name="acompanamiento" value="Arepa con Queso"> Arepa con Queso</label>
+        </div>
+
+        <div class="tabla">
+          <h3>Bebida Especial</h3>
+          <label><input type="radio" name="bebida" value="Limonada Hierbabuena"> Limonada Hierbabuena</label><br>
+          <label><input type="radio" name="bebida" value="Jugo Natural en leche"> Jugo Natural en leche</label><br>
+          <label><input type="radio" name="bebida" value="Café Especial"> Café Especial</label><br>
+          <label><input type="radio" name="bebida" value="Té Frío"> Té Frío</label>
+        </div>
+      </section>
+
+      <div class="acciones">
+        <button class="btn-verde" type="button" onclick="mostrarEspecial()">Agregar a la orden</button>
+      </div>
+    </form>
+
+    <div class="acciones">
+      <button class="btn-verde" onclick="location.href='restaurante.html'">← Regresar</button>
+      <button class="btn-azul-claro" onclick="location.href='Login.html'">Inicio</button>
+    </div>
+  </main>
+
+  <script>
+    if (sessionStorage.getItem("sesionIniciada") !== "true") {
+        alert('Por favor Iniciar Sesión con el siguiente usuario para iniciar la aplicación: administrador, clave: 1234'); 
+      window.location.href = "login.html";
+    }
+    function mostrarEspecial() {
+      const especial = document.querySelector('input[name="especial"]:checked');
+      const acompanamiento = document.querySelector('input[name="acompanamiento"]:checked');
+      const bebida = document.querySelector('input[name="bebida"]:checked');
+
+      if (especial && acompanamiento && bebida) {
+        alert(
+          `SE AGREGO LA SIQUIENTE ORDEN:\n` +
+          `Plato Especial: ${especial.value}\n` +
+          `Acompañamiento: ${acompanamiento.value}\n` +
+          `Bebida: ${bebida.value}`
+        );
+        history.back();
+      } else {
+        alert("Por favor selecciona una opción de cada categoría.");
+      }
+    }
+
+    function cerrarSesion() {
+    sessionStorage.removeItem("sesionIniciada");
+    window.location.href = "login.html";
+  }
+  </script>
+</body>
+</html>

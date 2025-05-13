@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Menú Principal</title>
+  <link rel="stylesheet" href="css/restaurante.css">
+</head>
+<body>
+  <div class="header">
+    <img src="img/san_parri1.png" alt="Encabezado Restaurante Panadería">
+  </div>
+
+  <div class="perfil">
+    <span>Perfil: Administradora</span>
+    <button onclick="cerrarSesion()" class="btn-cerrar-sesion">Cerrar Sesión</button>
+  </div>
+
+  <div class="botones-principales">
+    <button onclick="location.href='restaurante.html'">RESTAURANTE</button>
+    <button onclick="location.href='panaderia.html'">PANADERIA</button>
+</div>
+
+  <div class="boton-regresar">
+    <button onclick="location.href='login.html'">Regresar ⬅</button>
+  </div>
+  <script>
+    if (sessionStorage.getItem("sesionIniciada") !== "true") {
+        alert('Por favor Iniciar Sesión con el siguiente usuario para iniciar la aplicación: administrador, clave: 1234'); 
+      window.location.href = "login.html";
+    }
+
+    function cerrarSesion() {
+    sessionStorage.removeItem("sesionIniciada");
+    window.location.href = "login.html";
+  }
+
+  </script>
+</body>
+</html>

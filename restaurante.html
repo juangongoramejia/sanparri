@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurante San Parrillón</title>
+  <link rel="stylesheet" href="css/restaurante.css">
+</head>
+<body class="fondo-naranja">
+  <header class="encabezado">
+    <img src="img/san_parri1.png" alt="San Parrillón" class="banner">
+  </header>
+
+  <h2 class="perfil">Perfil: Administradora</h2>
+  <button onclick="cerrarSesion()" class="btn-cerrar-sesion">Cerrar Sesión</button>
+
+  <div class="contenido">
+    <div class="seccion">
+      <img src="img/almuerzo.png" alt="Almuerzo del día" class="icono" onclick="location.href='almuerzo.html'">
+    </div>
+
+    <div class="seccion">
+      <img src="img/especial.png" alt="Especiales" class="icono" onclick="location.href='especiales.html'">
+    </div>
+  </div>
+  <div class="acciones">
+    <button class="botones-principales" onclick="location.href='pagina_inicio.html'">Regresar ←</button>
+    <button class="botones-principales" onclick="location.href='Login.html'">Inicio</button>
+  </div>
+  <script>
+    if (sessionStorage.getItem("sesionIniciada") !== "true") {
+        alert('Por favor Iniciar Sesión con el siguiente usuario para iniciar la aplicación: administrador, clave: 1234'); 
+        window.location.href = "login.html";
+    }
+
+    function cerrarSesion() {
+    sessionStorage.removeItem("sesionIniciada");
+    window.location.href = "login.html";
+  }
+
+  </script>
+</body>
+</html>
+

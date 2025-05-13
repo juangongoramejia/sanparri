@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>San Parrillon</title>
+  <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+  <div class="login-container">
+    <h2>Bienvenido a San Parrillon</h2>
+    <input type="text" id="usuario" placeholder="Usuario">
+    <input type="password" id="contrasena" placeholder="Contraseña">
+    <button onclick="validarLogin()">Ingresar</button>
+    <div class="error" id="mensajeError"></div>
+  </div>
+
+  <script>
+    function validarLogin() {
+      const usuario = document.getElementById("usuario").value;
+      const contrasena = document.getElementById("contrasena").value;
+      const error = document.getElementById("mensajeError");
+
+      if (usuario === "administrador" && contrasena === "1234") {
+        sessionStorage.setItem("sesionIniciada", "true");
+        window.location.href = "pagina_inicio.html"; // Redirige si los datos son correctos
+      } else {
+        alert("Usuario o contraseña incorrectos");
+      }
+    }
+  </script>
+</body>
+</html>
