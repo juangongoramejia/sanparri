@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Procesar Pago</title>
+  <link rel="stylesheet" href="css/restaurante.css">
+</head>
+<body class="fondo-naranja">
+  <script>
+    if (sessionStorage.getItem("sesionIniciada") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <header class="encabezado">
+    <img src="img/san_parri1.png" alt="San Parrillón" class="banner">
+  </header>
+
+  <main class="contenido-pago">
+    <section class="perfil">
+      <h2>Confirmación de Orden y Pago</h2>
+    </section>
+
+    <section class="pago-formulario">
+      <div class="formulario-pago">
+        <label for="nombre">Nombre del Cliente:</label><br>
+        <input type="text" id="nombre" placeholder="Ingrese su nombre"><br><br>
+
+        <label for="metodo">Método de Pago:</label><br>
+        <select id="metodo">
+          <option>Efectivo</option>
+          <option>Tarjeta Crédito</option>
+          <option>Tarjeta Débito</option>
+          <option>Nequi / Daviplata</option>
+        </select><br><br>
+
+        <label for="total">Total a Pagar:</label><br>
+        <input type="text" id="total" placeholder="$0.00"><br><br>
+
+        <button class="btn-verde" onclick="confirmarPago()">Confirmar Pago</button>
+        <button class="btn-azul-claro" onclick="location.href='pagina_inicio.html'">Volver al Inicio</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function confirmarPago() {
+      const nombre = document.getElementById('nombre').value;
+      const metodo = document.getElementById('metodo').value;
+
+      if (nombre.trim() === "") {
+        alert("Por favor ingrese su nombre.");
+        return;
+      }
+
+      alert(`Gracias ${nombre}, su pago por ${metodo} ha sido procesado exitosamente.`);
+      location.href = "pagina_inicio.html";
+    }
+  </script>
+</body>
+</html>

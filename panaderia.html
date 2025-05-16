@@ -61,7 +61,7 @@
 
       if (seleccionados.length > 0) {
         alert("Se añadio lo siguiente a la orden:\n- " + seleccionados.join("\n- "));
-        history.back();
+        window.location.href = "pagos.html";
       } else {
         alert("No has seleccionado ningún producto.");
       }
